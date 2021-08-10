@@ -4,13 +4,15 @@
 ?>
 
 <?php
-		if(isset($_POST['profil'])) {
-			$id=$_POST['usersId'];
+		if(isset($_GET['usersId'])) {
+			$id=$_GET['usersId'];
 			
-			$query = "SELECT * FROM users WHERE id='$id'";
-			$query_run = mysqli_query($conn,$query);
-			
-			while($row =mysqli_fetch_array($query_run)) {
+			$sql = mysqli_query("SELECT 'usersName', 'usersPosition' FROM users WHERE PART_ID='$id'");
+			$count=mysqli_num_rows($sql);
+			if($count >0) {
+				while($row =mysqli_fetch_array($sql)) {
+			}
+	
 ?>
 	<link href="css/style - profile-crumbs.view.css" rel="stylesheet">
 	<h2>Profil</h2>
@@ -46,8 +48,8 @@
 				</form> 
 				</tr></td>
 <?php
-		}
-}
+		}			
+	}
 ?>
 			</table>		
 		</div>
