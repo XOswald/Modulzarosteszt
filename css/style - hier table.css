@@ -1,0 +1,27 @@
+img
+{
+	max-width: 240px;
+	display:inline-block;
+}
+.container
+{
+	text-align: center
+}
+.container > div
+{
+	width: 150px;
+
+}
+.left
+{
+	float: left;
+}
+.center
+{
+	display:inline-block;
+	margin:0 auto;
+}
+.right
+{
+	float: right;
+}
